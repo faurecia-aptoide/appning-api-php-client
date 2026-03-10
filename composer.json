@@ -1,7 +1,7 @@
 {
     "name": "appning/apiclient",
     "type": "library",
-    "description": "Client library for Google APIs",
+    "description": "Client library for Appning APIs",
     "keywords": ["appning"],
     "homepage": "https://appning.com/developers/#documentation",
     "license": "Apache-2.0",

@@ -49,7 +49,7 @@ try {
     $service = new AndroidPublisher($client);
 
     // 3. Build the request body for batch update
-    $packageName = "com.example.app";
+    $packageName = "payments.qa.test14";
 
     $batchRequestBody = [
         "oneTimeProduct" => [
@@ -57,14 +57,14 @@ try {
             "productId" => "coin_pack_etc_" . time(),
             "listings" => [
                 [
-                    "languageCode" => "pt-BR",
-                    "title" => "300 Moedas",
-                    "description" => "Receba 300 moedas instantaneamente"
+                    "languageCode" => "fr-FR",
+                    "title" => "Pack 500 pièces",
+                    "description" => "Recevez 500 pièces instantanément pour débloquer du contenu premium"
                 ],
                 [
                     "languageCode" => "en-US",
-                    "title" => "300 Coins",
-                    "description" => "Receive 300 coins instantly"
+                    "title" => "500 Coins Pack",
+                    "description" => "Receive 500 coins instantly to unlock premium content"
                 ]
             ],
             "purchaseOptions" => [
@@ -76,9 +76,9 @@ try {
                     ],
                     "regionalPricingAndAvailabilityConfigs" => [
                         [
-                            "regionCode" => "US",
+                            "regionCode" => "FR",
                             "price" => [
-                                "currencyCode" => "USD",
+                                "currencyCode" => "EUR",
                                 "units" => "1",
                                 "nanos" => 880000000
                             ],

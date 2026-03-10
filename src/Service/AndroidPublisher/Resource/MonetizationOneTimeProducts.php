@@ -28,17 +28,6 @@ use Appning\Service\Resource;
 class MonetizationOneTimeProducts extends Resource
 {
     /**
-     * @param Service $service
-     * @param string $serviceName
-     * @param string $resourceName
-     * @param array $resource
-     */
-    public function __construct($service, $serviceName, $resourceName, $resource)
-    {
-        parent::__construct($service, $serviceName, $resourceName, $resource);
-    }
-
-    /**
      * Magic method to intercept method calls and handle JWT Bearer authentication.
      *
      * @param string $name Method name

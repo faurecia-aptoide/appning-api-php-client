@@ -1,39 +1,49 @@
 # Installation
 
-This page contains information about installing the Google APIs Client Library for PHP.
+This page contains information about installing the Appning API Client Library for PHP.
 
 ## Requirements
 
-* PHP version 5.6 or greater.
+* [PHP 8.1 or higher](https://www.php.net/)
 
 ## Obtaining the client library
 
-There are two options for obtaining the files for the client library.
+### Composer (recommended)
 
-### Using Composer
+The preferred method is via [Composer](https://getcomposer.org/). Follow the [installation instructions](https://getcomposer.org/doc/00-intro.md) if you do not already have Composer installed.
 
-You can install the library by adding it as a dependency to your composer.json.
+Once Composer is installed, run the following in your project root:
+
+```sh
+composer require appning/apiclient
+```
+
+If you encounter a timeout, increase Composer’s process timeout, for example:
+
+```sh
+COMPOSER_PROCESS_TIMEOUT=600 composer require appning/apiclient
+```
+
+Or add this to the `config` section of your `composer.json`:
 
 ```json
-"require": {
-  "google/apiclient": "^2.0"
+{
+    "config": {
+        "process-timeout": 600
+    }
 }
 ```
 
-### Downloading from GitHub
+### Include the autoloader
 
-Follow [the instructions in the README](https://github.com/google/google-api-php-client#download-the-release) to download the package locally.
-
-### What to do with the files
-
-After obtaining the files, include the autoloader. If you used Composer, your require statement will look like this:
+After installing, include the autoloader in your application:
 
 ```php
 require_once '/path/to/your-project/vendor/autoload.php';
 ```
 
-If you downloaded the package separately, your require statement will look like this:
+### Dependency on `google/apiclient-services`
 
-```php
-require_once '/path/to/google-api-php-client/vendor/autoload.php';
-```
+This library depends on `google/apiclient-services`, which provides the API wrappers. The client does not pin a specific version of that package so you can use the latest API clients. **To avoid breaking changes in production**, it is recommended that you pin to the [latest version](https://github.com/googleapis/google-api-php-client-services/releases) of `google/apiclient-services` in your own `composer.json` before going to production.
+
+For more details, examples, and authentication (JWT Bearer / Appning), see the [main README](../README.md).

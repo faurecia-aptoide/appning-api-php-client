@@ -1,7 +1,6 @@
-# OAuth 2.0 for Server-to-Server (Service Accounts)
+# Service Account Authentication (Server-to-Server)
 
-This library supports server-to-server authentication using **service accounts**. For the **Android Publisher API**, this is the standard approach: your application uses a service account (credentials with `kid` and `privateKeyPem`) and JWT Bearer authentication. No user consent is required.
-
+This library supports server-to-server authentication using service accounts. For the Android Publisher API, this is the standard approach: your application authenticates as a service account and obtains access tokens using the OAuth 2.0 JWT Bearer flow. No end-user consent is required.
 ## Overview
 
 1. Obtain service account credentials (e.g. `serviceAccount.json`) from the developer portal.
@@ -20,7 +19,6 @@ $client->fromServiceAccountFile('/path/to/serviceAccount.json');
 For the traditional Google Cloud style (environment variable):
 
 ```php
-putenv('GOOGLE_APPLICATION_CREDENTIALS=/path/to/service-account.json');
 $client = new Appning\Client();
 $client->useApplicationDefaultCredentials();
 ```

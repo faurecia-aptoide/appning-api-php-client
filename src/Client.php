@@ -1102,15 +1102,15 @@ class Client
             }
         }
 
-        if (!isset($config['kid']) || empty($config['kid'])) {
+        if (empty($config['kid'])) {
             throw new InvalidArgumentException('kid is required in serviceAccount.json');
         }
 
-        if (!isset($config['clientId']) || empty($config['clientId'])) {
+        if (empty($config['clientId'])) {
             throw new InvalidArgumentException('clientId is required in serviceAccount.json');
         }
 
-        if (!isset($config['privateKeyPem']) || empty($config['privateKeyPem'])) {
+        if (empty($config['privateKeyPem'])) {
             throw new InvalidArgumentException('privateKeyPem is required in serviceAccount.json');
         }
 

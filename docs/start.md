@@ -9,7 +9,7 @@ This document provides the basic information you need to start using the library
 
 ## Authentication
 
-This library uses **JWT Bearer** authentication for Appning/Android Publisher. Use a service account JSON file (e.g. `serviceAccount.json`) containing `kid`, `privateKeyPem`, and optionally `clientId`. See the [main README](../README.md#authentication-with-jwt-bearer-appning) for the exact format.
+This library uses **JWT Bearer** authentication for Appning/Android Publisher. Use a service account JSON file (e.g. `serviceAccount.json`) containing `kid`, `privateKeyPem`, and `clientId`. See the [main README](../README.md#authentication-with-jwt-bearer-appning) for the exact format.
 
 ## Building and calling a service
 
