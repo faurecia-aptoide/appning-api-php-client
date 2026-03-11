@@ -1,6 +1,8 @@
 <?php
 /**
  * Copyright 2022 Google LLC
+ * Copyright 2026 Appning (modifications).
+ * This file has been modified from the original by Appning.
  *
  * Licensed to the Apache Software Foundation (ASF) under one
  * or more contributor license agreements.  See the NOTICE file
