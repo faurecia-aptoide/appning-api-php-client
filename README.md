@@ -8,8 +8,6 @@ The Appning API Library enables you to work with Appning APIs on your server. Th
 
 > This library is an **unofficial fork** of Google’s `google-api-php-client` library and is **maintained independently by Appning**. It is not an official Google product and is provided under the same Apache License 2.0 terms as the upstream project.
 
-**This repository is an unofficial fork of Google's API client libraries and is maintained independently by Appning.**
-
 ## Requirements ##
 * [PHP 8.1 or higher](https://www.php.net/)
 
