@@ -1,6 +1,8 @@
 <?php
 /**
  * Copyright 2010 Google Inc.
+ * Copyright 2026 Appning Lda (modifications).
+ * This file has been modified from the original by Appning.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -15,12 +17,12 @@
  * limitations under the License.
  */
 
-namespace Google\Service;
+namespace Appning\Service;
 
-use Google\Exception as GoogleException;
-use Google\Http\MediaFileUpload;
-use Google\Model;
-use Google\Utils\UriTemplate;
+use Appning\Exception as GoogleException;
+use Appning\Http\MediaFileUpload;
+use Appning\Model;
+use Appning\Utils\UriTemplate;
 use GuzzleHttp\Psr7\Request;
 
 /**
@@ -51,7 +53,7 @@ class Resource
     /** @var string $apiVersion */
     protected $apiVersion;
 
-    /** @var \Google\Client $client */
+    /** @var \Appning\Client $client */
     private $client;
 
     /** @var string $serviceName */
@@ -66,16 +68,20 @@ class Resource
     /** @var array $methods */
     private $methods;
 
+    /** @var \Appning\Service $service */
+    protected $service;
+
     public function __construct($service, $serviceName, $resourceName, $resource)
     {
+        $this->service = $service;
         $this->rootUrlTemplate = $service->rootUrlTemplate ?? $service->rootUrl;
         $this->client = $service->getClient();
         $this->servicePath = $service->servicePath;
         $this->serviceName = $serviceName;
         $this->resourceName = $resourceName;
         $this->methods = is_array($resource) && isset($resource['methods']) ?
-        $resource['methods'] :
-        [$resourceName => $resource];
+            $resource['methods'] :
+            [$resourceName => $resource];
     }
 
     /**
@@ -86,7 +92,7 @@ class Resource
      * @param array $arguments
      * @param class-string<T> $expectedClass - optional, the expected class name
      * @return mixed|T|ResponseInterface|RequestInterface
-     * @throws \Google\Exception
+     * @throws \Appning\Exception
      */
     public function call($name, $arguments, $expectedClass = null)
     {
@@ -278,9 +284,10 @@ class Resource
             $requestUrl = $this->servicePath . $restPath;
         }
 
-        if ($this->rootUrlTemplate) {
+        $rootUrlTemplate = $this->service->rootUrlTemplate ?? $this->service->rootUrl ?? null;
+        if ($rootUrlTemplate) {
             // code for universe domain
-            $rootUrl = str_replace('UNIVERSE_DOMAIN', $this->client->getUniverseDomain(), $this->rootUrlTemplate);
+            $rootUrl = str_replace('UNIVERSE_DOMAIN', $this->client->getUniverseDomain(), $rootUrlTemplate);
             // code for leading slash
             if ('/' !== substr($rootUrl, -1) && '/' !== substr($requestUrl, 0, 1)) {
                 $requestUrl = '/' . $requestUrl;

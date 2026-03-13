@@ -1,6 +1,8 @@
 <?php
 /*
  * Copyright 2014 Google Inc.
+ * Copyright 2026 Appning Lda (modifications).
+ * This file has been modified from the original by Appning.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -15,10 +17,10 @@
  * limitations under the License.
  */
 
-namespace Google\Task;
+namespace Appning\Task;
 
-use Google\Service\Exception as GoogleServiceException;
-use Google\Task\Exception as GoogleTaskException;
+use Appning\Service\Exception as GoogleServiceException;
+use Appning\Task\Exception as GoogleTaskException;
 
 /**
  * A task runner with exponential backoff support.
@@ -96,7 +98,7 @@ class Runner
      * @param string $name The name of the current task (used for logging)
      * @param callable $action The task to run and possibly retry
      * @param array $arguments The task arguments
-     * @throws \Google\Task\Exception when misconfigured
+     * @throws \Appning\Task\Exception when misconfigured
      */
     // @phpstan-ignore-next-line
     public function __construct(
@@ -178,7 +180,7 @@ class Runner
      * Runs the task and (if applicable) automatically retries when errors occur.
      *
      * @return mixed
-     * @throws \Google\Service\Exception on failure when no retries are available.
+     * @throws \Appning\Service\Exception on failure when no retries are available.
      */
     public function run()
     {

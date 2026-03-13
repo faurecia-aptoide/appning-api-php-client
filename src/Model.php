@@ -1,6 +1,8 @@
 <?php
 /*
  * Copyright 2011 Google Inc.
+ * Copyright 2026 Appning Lda (modifications).
+ * This file has been modified from the original by Appning.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -15,9 +17,9 @@
  * limitations under the License.
  */
 
-namespace Google;
+namespace Appning;
 
-use Google\Exception as GoogleException;
+use Appning\Exception as GoogleException;
 use ReflectionObject;
 use ReflectionProperty;
 use stdClass;
@@ -32,7 +34,7 @@ use stdClass;
 class Model implements \ArrayAccess
 {
     /**
-     * If you need to specify a NULL JSON value, use Google\Model::NULL_VALUE
+     * If you need to specify a NULL JSON value, use Appning\Model::NULL_VALUE
      * instead - it will be replaced when converting to JSON with a real null.
      */
     const NULL_VALUE = "{}gapi-php-null";
@@ -241,7 +243,7 @@ class Model implements \ArrayAccess
 
     /**
      * Verify if $obj is an array.
-     * @throws \Google\Exception Thrown if $obj isn't an array.
+     * @throws \Appning\Exception Thrown if $obj isn't an array.
      * @param array $obj Items that should be validated.
      * @param string $method Method expecting an array as an argument.
      */

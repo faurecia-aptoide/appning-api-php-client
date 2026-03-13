@@ -1,6 +1,8 @@
 <?php
 /*
  * Copyright 2010 Google Inc.
+ * Copyright 2026 Appning Lda (modifications).
+ * This file has been modified from the original by Appning.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -15,9 +17,9 @@
  * limitations under the License.
  */
 
-namespace Google;
+namespace Appning;
 
-use Google\Http\Batch;
+use Appning\Http\Batch;
 use TypeError;
 
 class Service
@@ -42,7 +44,7 @@ class Service
         } elseif (is_array($clientOrConfig)) {
             $this->client = new Client($clientOrConfig ?: []);
         } else {
-            $errorMessage = 'constructor must be array or instance of Google\Client';
+            $errorMessage = 'constructor must be array or instance of Appning\Client';
             if (class_exists('TypeError')) {
                 throw new TypeError($errorMessage);
             }
@@ -51,8 +53,8 @@ class Service
     }
 
     /**
-   * Return the associated Google\Client class.
-   * @return \Google\Client
+   * Return the associated Appning\Client class.
+   * @return \Appning\Client
    */
     public function getClient()
     {

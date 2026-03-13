@@ -1,6 +1,8 @@
 <?php
 /*
  * Copyright 2013 Google Inc.
+ * Copyright 2026 Appning Lda (modifications).
+ * This file has been modified from the original by Appning.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -15,7 +17,7 @@
  * limitations under the License.
  */
 
-namespace Google\Utils;
+namespace Appning\Utils;
 
 /**
  * Implementation of levels 1-3 of the URI Template spec.
